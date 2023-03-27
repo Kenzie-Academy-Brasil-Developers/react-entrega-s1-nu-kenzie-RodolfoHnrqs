@@ -1,33 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { CashForm } from './components/CashForm'
+import { CashList } from './components/CashList'
+import { Header } from './components/Header'
+import { v4 as uuidv4} from 'uuid'
+import { TotalMoney } from './components/TotalMoney'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [financesList, setFinancesList] = useState([])
+
+  const totalBalance = financesList.reduce((previousValue, finance) => {
+    if (finance.cashType === "Entrada"){
+      return Number(previousValue += parseFloat(finance.amount))
+    } else if (finance.cashType === "Despesa"){
+      return Number(previousValue - finance.amount)
+    }
+  }, 0)
+
+  const addNewFinance = (formData) => {
+    const newFinance = {...formData, id: uuidv4()}
+    const newFinancesList = [...financesList, newFinance]
+    setFinancesList(newFinancesList)
+  }
+
+  const removeFinanceFromFinancesList = (financeId) => {
+    const newFinancesList = financesList.filter(finance => finance.id !== financeId )
+    setFinancesList(newFinancesList)
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <main>
+        <div>
+          <CashForm addNewFinance={addNewFinance} />
+          <TotalMoney totalBalance={totalBalance} financesList={financesList} />
+        </div>
+        <div>
+          <h3>Resumo financeiro</h3>
+          <CashList financesList={financesList} removeFinanceFromFinancesList={removeFinanceFromFinancesList} />
+        </div>
+      </main>
     </div>
   )
 }
