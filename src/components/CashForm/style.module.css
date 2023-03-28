@@ -1,0 +1,54 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.875rem 1.375rem;
+    border: 1px solid rgba(0,0,0, 0.20);
+}
+
+.form > label{
+    color: var(--grey-4);
+    margin-bottom: 0.625rem;
+}
+
+.form > input{
+    border-radius: 0.5rem;
+    padding: 0.875rem 1rem;
+    outline: none;
+    border: 2px solid var(--grey-1);
+    background-color: var(--grey-1);
+    color: var(--grey-4);
+    margin-bottom: 10px;
+}
+
+.form > input:focus{
+    border: 2px solid var(--grey-4);
+}
+
+.form > span{
+    margin-bottom: 0.5rem;
+    color: var(--grey-3)
+}
+
+.form > select{
+    border-radius: 0.5rem;
+    padding: 0.875rem 1rem;
+    outline: none;
+    border: 2px solid var(--grey-1);
+    background-color: var(--grey-1);
+    color: var(--grey-4);
+    margin-bottom: 1.625rem;
+}
+
+.form > button{
+    border-radius: 0.5rem;
+    padding: 0.875rem 0;
+    border: none;
+    background-color: var(--color-primary-1);
+    color: #FFF;
+}
+
+.form > button:hover{
+    color: var(--grey-1);
+    background-color: var(--color-primary-2);
+}

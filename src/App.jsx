@@ -4,6 +4,7 @@ import { CashList } from './components/CashList'
 import { Header } from './components/Header'
 import { v4 as uuidv4} from 'uuid'
 import { TotalMoney } from './components/TotalMoney'
+import './styles/index.css'
 
 function App() {
   const [financesList, setFinancesList] = useState([])
@@ -36,7 +37,7 @@ function App() {
           <TotalMoney totalBalance={totalBalance} financesList={financesList} />
         </div>
         <div>
-          <h3>Resumo financeiro</h3>
+          <h3 className="titleThree">Resumo financeiro</h3>
           <CashList financesList={financesList} removeFinanceFromFinancesList={removeFinanceFromFinancesList} />
         </div>
       </main>

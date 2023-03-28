@@ -1,0 +1,18 @@
+.totalMoney{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--grey-2);
+    border-radius: 4px;
+    margin-top: 1.25rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.totalMoney > span{
+    color: var(--grey-4);
+}
+
+.totalMoney > p{
+    color: var(--color-primary-1);
+}

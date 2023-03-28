@@ -1,0 +1,33 @@
+@import "./reset.css";
+@import "./globalStyles.css";
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1.875rem;
+    padding: 0 1.25rem;
+}
+
+main > div{
+    width: 100%;
+}
+
+main > div > h3{
+    margin-top: 1.25rem;
+}
+
+main > div > h2{
+    margin-top: 1.25rem;
+}
+
+@media(min-width: 1023px){
+    main{
+        flex-direction: row;
+        padding: 0 16.25rem;
+        gap: 4.125rem;
+    }
+    main > div > h3{
+        margin-top: 0;
+    }
+}
