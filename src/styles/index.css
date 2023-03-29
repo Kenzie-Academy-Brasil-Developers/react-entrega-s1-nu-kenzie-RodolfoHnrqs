@@ -9,7 +9,11 @@ main{
     padding: 0 1.25rem;
 }
 
-main > div{
+.divForm{
+    width: 100%;
+}
+
+.divList{
     width: 100%;
 }
 
@@ -23,15 +27,23 @@ main > div > h2{
 
 @media(min-width: 1023px){
     main{
+        /* max-width: 1250px; */
         margin-top: 2.5rem;
         flex-direction: row;
         gap: 60px;
-    }
-    main > div{
-        width: 35%;
-        margin: 0 auto;
+        padding: 0rem 16.25rem;
+        justify-content: space-evenly;
     }
     main > div > h3{
         margin-top: 0;
+    }
+    .divForm{
+        width: 100%;
+        max-width: 360px;
+    }
+    
+    .divList{
+        width: 100%;
+        max-width: 560px;
     }
 }

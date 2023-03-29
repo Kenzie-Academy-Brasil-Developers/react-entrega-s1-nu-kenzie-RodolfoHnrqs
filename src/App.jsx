@@ -32,11 +32,11 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <div>
+        <div className="divForm">
           <CashForm addNewFinance={addNewFinance} />
           <TotalMoney totalBalance={totalBalance} financesList={financesList} />
         </div>
-        <div>
+        <div className="divList">
           <h3 className="titleThree">Resumo financeiro</h3>
           <CashList financesList={financesList} removeFinanceFromFinancesList={removeFinanceFromFinancesList} />
         </div>
