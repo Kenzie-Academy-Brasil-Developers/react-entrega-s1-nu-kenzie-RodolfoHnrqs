@@ -16,3 +16,7 @@
 .totalMoney > p{
     color: var(--color-primary-1);
 }
+
+@media (min-width: 1023px){
+    
+}

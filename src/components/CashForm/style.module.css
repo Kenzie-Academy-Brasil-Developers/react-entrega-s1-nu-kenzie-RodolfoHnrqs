@@ -52,3 +52,9 @@
     color: var(--grey-1);
     background-color: var(--color-primary-2);
 }
+
+@media (min-width: 1023px){
+    /* .form{
+        width: 560px;
+    } */
+}
